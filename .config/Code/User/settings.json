@@ -1,0 +1,563 @@
+{
+	// appearance
+	"workbench.colorTheme": "One Dark Pro Flat",
+	"oneDarkPro.vivid": true,
+	"editor.fontFamily": "'JetBrains Mono', 'Sarasa Gothic SC'",
+	"debug.console.fontFamily": "'JetBrains Mono', 'Sarasa Gothic SC'",
+	"terminal.integrated.fontFamily": "'JetBrainsMono Nerd Font Mono'",
+	"editor.fontLigatures": true,
+	"editor.fontSize": 14,
+	"editor.lineHeight": 1.5,
+	"workbench.colorCustomizations": {
+		"tab.activeBackground": "#282c34",
+		"activityBar.background": "#282c34",
+		"sideBar.background": "#282c34",
+		"tab.activeBorder": "#945cbf"
+	},
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"name": "italic font",
+				"scope": [
+					"comment",
+					"keyword",
+					"storage",
+					"keyword.control",
+					"keyword.control.from",
+					"keyword.control.flow",
+					"keyword.operator.new",
+					"keyword.control.import",
+					"keyword.control.export",
+					"keyword.control.default",
+					"keyword.control.trycatch",
+					"keyword.control.conditional",
+					"storage.type",
+					"storage.type.class",
+					"storage.modifier.tsx",
+					"storage.type.function",
+					"storage.modifier.async",
+					"variable.language",
+					"variable.language.this",
+					"variable.language.super",
+					"meta.class",
+					"meta.var.expr",
+					"constant.language.null",
+					"support.type.primitive",
+					"entity.name.method.js",
+					"entity.other.attribute-name",
+					"punctuation.definition.comment",
+					"text.html.basic entity.other.attribute-name",
+					"tag.decorator.js entity.name.tag.js",
+					"tag.decorator.js punctuation.definition.tag.js",
+					"source.js constant.other.object.key.js string.unquoted.label.js",
+				],
+				"settings": {
+				"fontStyle": "italic",
+				}
+			},
+		]
+ 	},
+	"editor.semanticTokenColorCustomizations": {
+		"[One Dark Pro]": {
+			// Apply to this theme only
+			"enabled": true,
+			"rules": {
+				"magicFunction:python": "#ee0000",
+				"function.declaration:python": "#990000",
+				"*.decorator:python": "#0000dd",
+				"*.typeHint:python": "#5500aa",
+				"*.typeHintComment:python": "#aaaaaa",
+				"parameter:python": "#aaaaaa"
+			}
+		}
+  	},
+
+	// window setting
+	"window.commandCenter": true,
+	"window.titleBarStyle": "custom",
+	"window.menuBarVisibility": "toggle",
+	"window.openFoldersInNewWindow": "on",
+
+	"workbench.tree.renderIndentGuides": "always",
+	"workbench.view.alwaysShowHeaderActions": true,
+	"workbench.editor.enablePreviewFromQuickOpen": true,
+	"editor.tabCompletion": "on",
+	"workbench.commandPalette.preserveInput": true,
+
+	"files.autoSave": "afterDelay",
+	"security.workspace.trust.untrustedFiles": "open",
+	"verilog.linting.linter": "xvlog",
+
+	// vim setting
+	"vim.easymotion": true, //
+	"vim.incsearch": true,
+	"vim.useSystemClipboard": true,
+	"vim.useCtrlKeys": true,
+	"vim.hlsearch": true,
+	"vim.insertModeKeyBindings": [
+		{
+			"before": ["j", "j"],
+			"after": ["<Esc>"]
+		}
+	],
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": ["<leader>", "d"],
+			"after": ["d", "d"]
+		},
+		{
+			"before": ["<C-n>"],
+			"commands": [":nohl"]
+		},
+		{
+			"before": ["K"],
+			"commands": ["lineBreakInsert"],
+			"silent": true
+		}
+	],
+	"vim.leader": "<space>",
+	"vim.handleKeys": {
+		"<C-a>": false,
+		"<C-f>": false
+	},
+	"editor.guides.bracketPairs": true,
+	"terminal.integrated.cursorStyle": "line",
+	"editor.rulers": [120],
+	"files.trimTrailingWhitespace": true,
+	"editor.cursorSmoothCaretAnimation": true,
+	"workbench.list.smoothScrolling": true,
+	"editor.smoothScrolling": true,
+	"terminal.integrated.smoothScrolling": true,
+	"editor.mouseWheelZoom": true,
+	"window.dialogStyle": "custom",
+	"workbench.iconTheme": "material-icon-theme",
+	"editor.inlineSuggest.enabled": true,
+	"cSpell.userWords": [
+		"activeline",
+		"Adagrad",
+		"aimax",
+		"albumentations",
+		"arange",
+		"argmax",
+		"asarray",
+		"astype",
+		"aucs",
+		"autoaugment",
+		"autocontrast",
+		"Autograd",
+		"autopep",
+		"bigdata",
+		"Bilibili",
+		"bnneck",
+		"BPRMF",
+		"caffe",
+		"chans",
+		"CIFAR",
+		"ckpt",
+		"cnblogs",
+		"colorlog",
+		"colour",
+		"Conv",
+		"convnext",
+		"convs",
+		"cout",
+		"cppimport",
+		"cprint",
+		"csvfile",
+		"CUDA",
+		"cudnn",
+		"dataload",
+		"dataloaders",
+		"datas",
+		"depthwise",
+		"detectron",
+		"digix",
+		"downsample",
+		"downsamples",
+		"downsampling",
+		"dstack",
+		"dtype",
+		"dwconv",
+		"earlystop",
+		"easymotion",
+		"efficientformer",
+		"efficientnet",
+		"elif",
+		"embs",
+		"fftfreq",
+		"figsize",
+		"fileheader",
+		"finetune",
+		"fism",
+		"freqs",
+		"fstream",
+		"GELU",
+		"getitem",
+		"gowalla",
+		"hlsearch",
+		"hspace",
+		"idcg",
+		"idxs",
+		"ifft",
+		"IMAGENET",
+		"imread",
+		"imsave",
+		"incsearch",
+		"inplace",
+		"inplanes",
+		"iostream",
+		"jetson",
+		"keepdim",
+		"keepprob",
+		"lastfm",
+		"levelname",
+		"libtorch",
+		"lightgcn",
+		"linspace",
+		"listwise",
+		"loadtxt",
+		"Logits",
+		"lstm",
+		"matplotlib",
+		"maxpool",
+		"minibatch",
+		"mmdetection",
+		"mmsegmentation",
+		"mstd",
+		"multicore",
+		"narm",
+		"ndarray",
+		"ndcg",
+		"NGCF's",
+		"njit",
+		"nullptr",
+		"numba",
+		"numel",
+		"numpy",
+		"optim",
+		"picgo",
+		"pids",
+		"pointwise",
+		"Posterize",
+		"Powerline",
+		"PRETRAIN",
+		"pretrained",
+		"probs",
+		"PTWBCE",
+		"PTWMSE",
+		"pwconv",
+		"PWMSE",
+		"pylab",
+		"Pylance",
+		"pyplot",
+		"randint",
+		"randlike",
+		"randn",
+		"recdim",
+		"Recmodel",
+		"relu",
+		"resnet",
+		"rfft",
+		"rowsum",
+		"Sarasa",
+		"scipy",
+		"semilogx",
+		"SGDR",
+		"skimage",
+		"sklearn",
+		"smms",
+		"softmax",
+		"softplus",
+		"steelblue",
+		"subfolders",
+		"SVHN",
+		"swin",
+		"tensorboard",
+		"testbatch",
+		"testset",
+		"timm",
+		"tocoo",
+		"tocsr",
+		"todok",
+		"tolil",
+		"topk",
+		"topks",
+		"torchvision",
+		"tosakrin",
+		"tqdm",
+		"traindata",
+		"trainset",
+		"TSNE",
+		"unsqueeze",
+		"venv",
+		"verilog",
+		"vsintellicode",
+		"wavfile",
+		"workdir",
+		"wspace",
+		"Xiangnan",
+		"xlabel",
+		"xlarge",
+		"xvlog",
+		"ylabel"
+	],
+	"remote.SSH.remotePlatform": {
+		"aimax": "linux",
+		"aimax_": "linux",
+		"hpc": "linux",
+		"hpc_": "linux",
+		"hpc_1": "linux",
+		"1080_": "linux",
+		"encry": "linux",
+		"jump_": "linux"
+	},
+	"files.autoGuessEncoding": true,
+	"editor.cursorBlinking": "smooth",
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.formatOnType": true,
+	"editor.wordWrap": "on",
+	"editor.suggest.snippetsPreventQuickSuggestions": false,
+	"editor.suggest.shareSuggestSelections": true,
+	"editor.suggestSelection": "first",
+	"debug.showBreakpointsInOverviewRuler": true,
+	"python.analysis.inlayHints.functionReturnTypes": true,
+	"python.analysis.completeFunctionParens": true,
+	"python.analysis.indexing": false,
+	"editor.semanticHighlighting.enabled": false,
+	"oneDarkPro.bold": true,
+	"markdown.extension.toc.orderedList": true,
+	"[markdown]": {
+		// 自动保存
+		"editor.formatOnSave": true,
+		// 显示空格
+		"editor.renderWhitespace": "all",
+		// 快速补全
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": true,
+			"strings": true
+		},
+		// snippet 提示优先
+		"editor.snippetSuggestions": "top",
+		"editor.tabCompletion": "on",
+		// 使用enter 接受提示
+		"editor.acceptSuggestionOnEnter": "on",
+		// 默认格式化工具为本工具
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"markdownFormatter.displayTime": true,
+	"markdownFormatter.formatOpt": {},
+	"markdownFormatter.spaceAfterFullWidthOrHalfWidth": "all",
+	"mdpadding.ignoreWords": ["=="],
+	"markdown-header-coloring.backgroundColor": "",
+	"vsintellicode.modify.editor.suggestSelection": "choseToUpdateConfiguration",
+	"sourcery.token": "user_OcyEiM83f4Ttg6yYOElAs0b0pqq3mZibqszbI_8a35kswpcN3iT67RuKuT8",
+	"[html]": {
+		"editor.defaultFormatter": "vscode.html-language-features"
+	},
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"cSpell.languageSettings": [],
+	"python.analysis.extraPaths": ["venv/lib"],
+	"prettier.useTabs": true,
+	"[json]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"notebook.lineNumbers": "on",
+	"autoDocstring.includeName": true,
+	"gitlens.codeLens.scopes": ["document", "containers", "blocks"],
+	"editor.stickyScroll.enabled": true,
+	"gitlens.currentLine.uncommittedChangesFormat": "✏️ ${author} | ${message} | ${agoOrDate}",
+	"python.languageServer": "Pylance",
+	"python.formatting.autopep8Args": ["--max-line-length=120"],
+	"fileheader.Author": "TosakRin",
+	"fileheader.LastModifiedBy": "TosakRin",
+	"fileheader.customMade": {
+		"Author": "git config user.name && git config user.email",
+		"Date": "Do not edit", // 文件创建时间(不变)
+		// 文件最后编辑者
+		"LastEditors": "git config user.name && git config user.email",
+		"LastEditTime": "Do not edit", // 文件最后编辑时间
+		"FilePath": "Do not edit", // 文件在项目中的相对路径 自动更新
+		"Description": ""
+	},
+	"fileheader.configObj": {
+		"createFileTime": true,
+		"language": {
+			"languagetest": {
+				"head": "/$$",
+				"middle": " $ @",
+				"end": " $/",
+				"functionSymbol": {
+					"head": "/** ",
+					"middle": " * @",
+					"end": " */"
+				},
+				"functionParams": "js"
+			},
+			"py": {
+				"head": "'''\n/@",
+				"middle": " @",
+				"end": " @/\n'''",
+				"functionSymbol": {
+					"head": "/** ",
+					"middle": " * @",
+					"end": " */"
+				},
+				"functionParams": "js"
+			}
+		},
+		"autoAdd": true,
+		"autoAddLine": 100,
+		"autoAlready": true,
+		"annotationStr": {
+			"head": "/*",
+			"middle": " * @",
+			"end": " */",
+			"use": true
+		},
+		"headInsertLine": {
+			"php": 2,
+			"sh": 2
+		},
+		"beforeAnnotation": {
+			"文件后缀": "该文件后缀的头部注释之前添加某些内容"
+		},
+		"afterAnnotation": {
+			"文件后缀": "该文件后缀的头部注释之后添加某些内容"
+		},
+		"specialOptions": {
+			"特殊字段": "自定义比如LastEditTime/LastEditors"
+		},
+		"switch": {
+			"newlineAddAnnotation": true
+		},
+		"supportAutoLanguage": [],
+		"prohibitAutoAdd": ["json"],
+		"folderBlacklist": ["node_modules", "文件夹禁止自动添加头部注释"],
+		"prohibitItemAutoAdd": [
+			"项目的全称, 整个项目禁止自动添加头部注释, 可以使用快捷键添加"
+		],
+		"moveCursor": true,
+		"dateFormat": "YYYY-MM-DD HH:mm:ss",
+		"atSymbol": ["@", "@"],
+		"atSymbolObj": {
+			"文件后缀": ["头部注释@符号", "函数注释@符号"]
+		},
+		"colon": [": ", ": "],
+		"colonObj": {
+			"文件后缀": ["头部注释冒号", "函数注释冒号"]
+		},
+		"filePathColon": "路径分隔符替换",
+		"showErrorMessage": false,
+		"writeLog": false,
+		"wideSame": true,
+		"wideNum": 13,
+		"functionWideNum": 0,
+		"CheckFileChange": false,
+		"createHeader": false,
+		"useWorker": false,
+		"designAddHead": false,
+		"headDesignName": "random",
+		"headDesign": false,
+		"cursorModeInternalAll": {},
+		"openFunctionParamsCheck": true,
+		"functionParamsShape": ["{", "}"],
+		"functionBlankSpaceAll": {},
+		"functionTypeSymbol": "*",
+		"typeParamOrder": "type param",
+		"customHasHeadEnd": {},
+		"throttleTime": 60000,
+		"functionParamAddStr": "",
+		"NoMatchParams": "no show param"
+	},
+	"vsintellicode.features.python.deepLearning": "enabled",
+	"python.autoComplete.extraPaths": [],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"python.formatting.provider": "black",
+	"python.formatting.blackArgs": ["--line-length=120"],
+	"alignment.indentBase": "activeline",
+	"python.analysis.autoImportCompletions": true,
+	"python.analysis.typeCheckingMode": "basic",
+	"editor.accessibilitySupport": "off",
+	"oneDarkPro.editorTheme": "One Dark Pro Flat",
+	"indentRainbow.indicatorStyle": "light",
+	"errorLens.enabledDiagnosticLevels": [
+		"error",
+		"warning",
+		"info",
+		"hint"
+	],
+	"github.gitProtocol": "ssh",
+	"files.exclude": {
+		"**/__pycache__": true
+	},
+	"better-comments.tags": [
+		// Separator
+		{
+			"tag": "==",
+			"color": "#A45cEf",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "?",
+			"color": "#3498DB",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "//",
+			"color": "#474747",
+			"strikethrough": true,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "todo",
+			"color": "#FF8C00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "*",
+			"color": "#98C379",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		}
+	],
+	"workbench.editor.wrapTabs": true,
+	"workbench.editor.scrollToSwitchTabs": true,
+	"workbench.editor.highlightModifiedTabs": true,
+	"terminal.integrated.minimumContrastRatio": 1,
+	"terminal.integrated.cursorBlinking": true,
+	"terminal.integrated.customGlyphs": false,
+	"terminal.integrated.defaultProfile.linux": "tmux",
+	"terminal.integrated.tabs.defaultColor": "terminal.ansiMagenta",
+	"remote.SSH.configFile": "~/.ssh/config"
+}
