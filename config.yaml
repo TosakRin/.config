@@ -1,25 +1,32 @@
+# * Project URL: https://github.com/glazerdesktop/GlazeWM
+
 general:
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: true
+
   # Whether to jump the cursor between windows focused by the WM.
   cursor_follow_focus: true
+
   # Whether to show floating windows as always on top.
-  show_floating_on_top: false
+  show_floating_on_top: true
+
   # Amount to move floating windows by (eg. when using `alt+<hjkl>` on a floating window)
-  floating_window_move_amount: "5%"
+  floating_window_move_amount: "10%"
+
   # Whether to switch back and forth between the previously focused workspace when focusing the current workspace.
   # When enabled, switching to the current workspace activates the previously focused workspace
   toggle_workspace_on_refocus: true
+
   # *Strongly* recommended to set to 'false'. Whether to globally enable/disable
-  # window transition animations (on minimize, close, etc). Set to 'unchanged'
-  # to make no setting changes.
+  # window transition animations (on minimize, close, etc). Set to 'unchanged' to make no setting changes.
   window_animations: "unchanged"
 
 gaps:
   # Gap between adjacent windows.
-  inner_gap: "10px"
+  inner_gap: "5px"
+
   # Gap between windows and the screen edge.
-  outer_gap: "5px 0 20px 0"
+  outer_gap: "0px 8px 0px 8px"
 
 # Highlight active/inactive windows with a colored border.
 # Exclusive to Windows 11 due to API limitations.
@@ -35,52 +42,64 @@ focus_borders:
 
 bar:
   enabled: true
+
+  # Height of the bar in pixels.
   height: "32px"
+
+  # The position of the bar on the screen. Can be either "top" or "bottom".
   position: "top"
   always_on_top: false
-  opacity: 0.8
-  background: "#20242cc4"
-  foreground: "#ffffff"
-  font_family: "Microsoft Yahei UI"
+  opacity: 1.0
+  background: "#20242c04"
+  foreground: "#ffffffff"
+  font_family: "Ubuntu Nerd Font"
   font_size: "16px"
   font_weight: "400"
-  padding: "4px 6px"
-  offset_x: "0"
-  offset_y: "1"
-  border_radius: "10"
-  border_width: "1"
-  border_color: "#42c0fb66"
+
+  # bar widgets padding
+  padding: "1px 6px"
+
+  # Margin between the bar and the screen edge.
+  offset_x: "5px"
+  offset_y: "5px"
+
+  # Border around the bar.
+  border_radius: "5px"
+  border_width: "0px"
+  border_color: "#42c0fbaa"
   # Separator between components within the bar. `label` is used for each section
   # of the bar unless `label_{left,center,right}` is explictly set, in which case
   # they are preferred over default.
-  # component_separator:
-  #   label: " | "
+  component_separator:
+    label: " "
   components_left:
-    # - type: "cpu"
-    #   # Change font family (ie. ff) to Comic Sans for part of the label:
-    #   label: "CPU: {percent_usage}% | "
-    #   refresh_interval_ms: 1000
-    # - type: "battery"
-    #   # Show an icon by using an icon font:
-    #   label_draining: "<attr ff='Material Icons'></attr> {battery_level}%"
-    #   # Multiple attributes can be changed at once:
-    #   label_charging: "{battery_level}% <attr ff='Arial' fg='#228B22' fw='400' fs='13px'>(charging)</attr>"
     - type: "workspaces"
-      focused_workspace_background: "#8192B377"
+      focused_workspace_background: "#8192B344"
       displayed_workspace_background: "#00000033"
       default_workspace_background: "transparent"
+    - type: "cpu"
+      label: "| \uf4bc {percent_usage}%"
+      refresh_interval_ms: 1000
+    - type: "gpu"
+      label: "\uf11b {percent_usage}%"
+      refresh_interval_ms: 1000
+    - type: "memory"
+      label: "\ue28c {percent_usage}%"
+      refresh_interval_ms: 1000
   components_center:
     - type: "window title"
   components_right:
     # - type: "system tray"
-    - type: "memory"
-      label: "RAM: {percent_usage}% | "
-      # How often this counter is refreshed.
-      refresh_interval_ms: 1000
+    #   label_expand_text: "<"
+    #   label_collapse_text: ">"
+    - type: "binding mode"
+      background: "#ffffff33"
+      margin: "5px 4px"
+      padding: "0 3px"
     - type: "battery"
-      label_draining: "{battery_level}% remaining | "
-      label_power_saver: "{battery_level}% (power saver) | "
-      label_charging: "{battery_level}% (charging) | "
+      label_draining: "\uf244<attr fg='#da2222' fw='800'>  {battery_level}%</attr>"
+      label_power_saver: "\uf242<attr fg='#daAB22' fw='800'>  {battery_level}%</attr>"
+      label_charging: "\uf240<attr fg='#22AB22' fw='800'>  {battery_level}%</attr>"
     # - type: "network"
     #   label_no_internet: "NC"
     #   label_ethernet: "Eth"
@@ -93,49 +112,51 @@ bar:
       latitude: 32.02891
       longitude: 118.855629
       label: "{temperature_celsius}°C"
-      label_sun: "☀️ {temperature_celsius}°C"
+      label_sun: "🌞 {temperature_celsius}°C"
       label_moon: "🌙 {temperature_celsius}°C"
-      label_cloud_moon: "🌙☁️ {temperature_celsius}°C"
+      label_cloud_moon: "☁️ {temperature_celsius}°C"
       label_cloud_sun: "⛅ {temperature_celsius}°C"
-      label_cloud_moon_rain: "🌙🌧️ {temperature_celsius}°C"
+      label_cloud_moon_rain: "🌧️ {temperature_celsius}°C"
       label_cloud_sun_rain: "🌦️ {temperature_celsius}°C"
       label_cloud_rain: "🌧️ {temperature_celsius}°C"
       label_snow_flake: "❄️ {temperature_celsius}°C"
-      label_thunderstorm: "⚡ {temperature_celsius}°C"
+      label_thunderstorm: "⛈️{temperature_celsius}°C"
       label_cloud: "☁️ {temperature_celsius}°C"
     - type: "tiling direction"
       label_horizontal: "⮂"
       label_vertical: "⮁"
-      background: "#ffffff33"
-      margin: "0 4px"
-      padding: "0 8px"
-    - type: "binding mode"
-      background: "#ffffff33"
-      margin: "0 4px 0 0"
-      padding: "0 8px"
+      background: "#ffffff22"
+      margin: "5px 4px"
+      padding: "0px 5px"
     - type: "clock"
       # Documentation on formatting date/time string:
       # https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-      time_formatting: "HH:mm tt  ddd MMM d"
-      margin: "0 0 0 10px"
+      time_formatting: "\uf073 ddd MMM d  \uf43a HH:mm tt"
+      # margin: "0 0 0 0px"
+
+# ===== workspaces =====
 
 workspaces:
   - name: "6"
-    display_name: "Laptop Monitor"
+    display_name: "\uf109"
     bind_to_monitor: 1
+    # Optionally prevent workspace from being deactivated when empty.
+    keep_alive: false
   - name: "1"
-    display_name: "Browser"
+    display_name: "\uf488"
   - name: "2"
-    display_name: "Note"
+    display_name: "\ue678"
   - name: "3"
-    display_name: "Code"
+    display_name: "\uf09b"
   - name: "5"
-    display_name: "Messages"
+    display_name: "\ueb1c"
   - name: "4"
-    display_name: "Temp"
+    display_name: "\uf1f8"
   - name: "7"
   - name: "8"
   - name: "9"
+
+# ===== window rules =====
 
 window_rules:
   # Task Manager requires admin privileges to manage and should be ignored unless running
@@ -150,6 +171,8 @@ window_rules:
   # Some applications (eg. Steam) have borders that extend past the normal border size.
   - command: "resize borders 0px -7px -7px -7px"
     match_process_name: "steam"
+
+# ===== binding modes =====
 
 binding_modes:
   - name: "resize"
