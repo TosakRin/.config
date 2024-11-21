@@ -1,0 +1,40 @@
+configuration{
+    modi: "combi,run,drun,window,filebrowser,ssh";
+    icon-theme: "fluent";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-combi: "  Home ";
+    display-drun: "  Apps ";
+    display-run: "   Run ";
+    display-window: "   Window ";
+    display-Network: " 󰤨  Network ";
+    display-filebrowser: "   Files ";
+    display-ssh: " 󰣀 SSH ";
+    sidebar-mode: true;
+    click-to-exit: true;
+
+    timeout {
+        delay:  15;
+        action: "kb-cancel";
+    }
+
+    window {
+      hide-active-window: true;
+    }
+
+    drun {
+      /** Scan the current users desktop for desktop files. */
+      scan-desktop: true;
+      /** Parse user desktop files. */
+      parse-user:   true;
+      /** Parse system desktop files. */
+      parse-system: true;
+   }
+}
+
+@theme "catppuccin-frappe"
+

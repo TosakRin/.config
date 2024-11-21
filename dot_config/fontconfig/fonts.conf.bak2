@@ -1,0 +1,389 @@
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+    <!-- Default system-ui fonts -->
+    <match target="pattern">
+        <test name="family">
+            <string>system-ui</string>
+        </test>
+        <edit binding="strong" mode="prepend" name="family">
+            <string>sans-serif</string>
+        </edit>
+    </match>
+
+    <!-- Default sans-serif fonts -->
+    <match target="pattern">
+        <test name="family">
+            <string>sans-serif</string>
+        </test>
+        <edit binding="strong" mode="prepend" name="family">
+            <string>Noto Sans CJK SC</string>
+            <string>Noto Sans</string>
+            <string>Noto Color Emoji</string>
+            <string>Symbols Nerd Font</string>
+            <string>Twemoji</string>
+        </edit>
+    </match>
+
+    <!--   Default serif fonts   -->
+    <match target="pattern">
+        <test name="family">
+            <string>serif</string>
+        </test>
+        <edit binding="strong" mode="prepend" name="family">
+            <string>Noto Serif CJK SC</string>
+            <string>Noto Serif</string>
+            <string>Noto Color Emoji</string>
+            <string>Symbols Nerd Font</string>
+            <string>Twemoji</string>
+        </edit>
+    </match>
+
+    <!-- Default monospace fonts-->
+    <match target="pattern">
+        <test name="family">
+            <string>monospace</string>
+        </test>
+        <edit binding="strong" mode="prepend" name="family">
+            <string>Maple Mono</string>
+            <string>Maple Mono NF</string>
+            <string>Maple Mono NF CN</string>
+            <string>JetBrainsMono NF</string>
+            <string>JetBrains Mono</string>
+            <string>Noto Sans Mono</string>
+            <string>Noto Sans Mono CJK SC</string>
+            <string>Noto Color Emoji</string>
+            <string>Symbols Nerd Font</string>
+            <string>Twemoji</string>
+        </edit>
+    </match>
+
+    <!-- Default CJK fonts -->
+    <match target="pattern">
+        <test name="lang">
+            <string>zh-HK</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans CJK HK</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>zh-HK</string>
+        </test>
+        <test name="family">
+            <string>Noto Serif CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <!-- not have HK -->
+            <string>Noto Serif CJK TC</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>zh-HK</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans Mono CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans Mono CJK HK</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>zh-TW</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans CJK TC</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>zh-TW</string>
+        </test>
+        <test name="family">
+            <string>Noto Serif CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Serif CJK TC</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>zh-TW</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans Mono CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans Mono CJK TC</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>ja</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans CJK JP</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>ja</string>
+        </test>
+        <test name="family">
+            <string>Noto Serif CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Serif CJK JP</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>ja</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans Mono CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans Mono CJK JP</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>ko</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans CJK KR</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>ko</string>
+        </test>
+        <test name="family">
+            <string>Noto Serif CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Serif CJK KR</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test name="lang">
+            <string>ko</string>
+        </test>
+        <test name="family">
+            <string>Noto Sans Mono CJK SC</string>
+        </test>
+        <edit binding="strong" name="family">
+            <string>Noto Sans Mono CJK KR</string>
+        </edit>
+    </match>
+
+    <!--         en/zh-cn        -->
+    <match target="pattern">
+        <test compare="contains" name="lang">
+            <string>en</string>
+        </test>
+        <test compare="contains" name="family">
+            <string>Noto Sans CJK</string>
+        </test>
+        <edit binding="strong" mode="prepend" name="family">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+    <match target="pattern">
+        <test compare="contains" name="lang">
+            <string>en</string>
+        </test>
+        <test compare="contains" name="family">
+            <string>Noto Serif CJK</string>
+        </test>
+        <edit binding="strong" mode="prepend" name="family">
+            <string>Noto Serif</string>
+        </edit>
+    </match>
+
+
+    <!-- Replace built-in/safe fonts -->
+
+    <!-- Replace sans-serif fonts -->
+    <match target="pattern">
+        <test name="family">
+            <string>Cantarell</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Arial</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Tahoma</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Calibri</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Helvetica</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Liberation Sans</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family" compare="contains">
+            <string>Microsoft YaHei</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans CJK SC</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>微软雅黑</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans CJK SC</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>SimHei</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans CJK SC</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>黑体</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Sans CJK SC</string>
+        </edit>
+    </match>
+
+    <!-- Replace serif fonts -->
+    <match target="pattern">
+        <test name="family">
+            <string>Times New Roman</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Serif</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Liberation Serif</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Noto Serif</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family" compare="contains">
+            <string>SimSun</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>LXGW WenKai</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>宋体</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>LXGW WenKai</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>FangSong</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>LXGW WenKai</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>仿宋</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>LXGW WenKai</string>
+        </edit>
+    </match>
+
+    <!-- Replace monospace fonts -->
+    <match target="pattern">
+        <test name="family" compare="contains">
+            <string>Source Code</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Maple Mono</string>
+        </edit>
+    </match>
+
+    <match target="pattern">
+        <test name="family">
+            <string>Liberation Mono</string>
+        </test>
+        <edit name="family" binding="same">
+            <string>Maple Mono</string>
+        </edit>
+    </match>
+
+    <dir>~/.fonts</dir>
+</fontconfig>

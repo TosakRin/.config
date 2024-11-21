@@ -1,0 +1,49 @@
+# Basic
+alias ..='cd ..'
+alias cp='cp -v'
+alias rm='rm -I'
+alias mv='mv -iv'
+alias ln='ln -sriv'
+alias mkdir='mkdir -p'
+
+
+# alias for modern unix
+source "$XDG_CONFIG_HOME"/zsh/modern_unix.sh
+
+# Cmatrix thing
+alias matrix='cmatrix -s -C cyan'
+
+# memory
+alias free='free -mlt'
+
+# xclip&xsel
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+
+# config
+alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias sshrc='vim ~/.ssh/config'
+alias zshrc='vim ~/.config/zsh/.zshrc'
+
+alias vim="nvim"
+alias vi="nvim"
+alias sudo="sudo "
+alias ra="yazi "
+
+# pacman & yay & paru & aur
+
+# Recent Installed Packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

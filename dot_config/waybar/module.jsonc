@@ -1,0 +1,293 @@
+{
+    "custom/launcher": {
+        "format": " ",
+        "on-click": "rofi -show drun",
+        "on-click-right": "killall rofi"
+    },
+    "hyprland/workspaces": {
+        // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#module-hyprland-configuration-icons
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "format": "<sub>{icon}</sub>{windows}",
+        "show-special": true,
+        "special-visible-only": true,
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            // use `hyprctl clients` to get the window class and title
+            "title<.*youtube.*>": "", // Windows whose titles contain "youtube"
+            "Konsole": "", // Windows that contain "foot" in either class or title. For optimization reasons, it will only match against a title if at least one other window explicitly matches against a title.
+            "obsidian": "",
+            "chrome": "",
+            "music": "",
+            "QQ": "",
+            "wechat": "",
+            "bilibili": "󰟴",
+            "nautilus": "",
+            "kitty": "󰄛",
+            "class<firefox>": "", // Windows whose classes are "firefox"
+            "title<.*google.*>": "",
+            "class<firefox> title<.*github.*>": "", // Windows whose class is "firefox" and title contains "github". Note that "class" always comes first.
+            "title<.*bilibili.*>": "󰟴",
+            "Steam": "",
+            "Bluetooth": "",
+            "OneNote": "󰝇",
+            "class<jetbrains-idea>": "",
+            "code": "󰨞",
+            "pavucontrol": "",
+            "monitor": "",
+            "onedrive": "",
+            "obsproject": "󰑋",
+            "kde": "",
+            "clash": ""
+        }
+    },
+    "hyprland/window": {
+        // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+        "format": "👉 {initialTitle}",
+        "max-length": 40,
+        "separate-outputs": true, // Show the active window of the monitor the bar belongs to, instead of the focused window.
+        "offscreen-css": true,
+        "offscreen-css-text": "(inactive)",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": " $1",
+            "(.*) - fish": "> [$1]",
+            "(.*) - kitty": "> [$1]",
+            "(.*) - vim": " [$1]",
+            "(.*) - zsh": " [$1]"
+        }
+    },
+    "hyprland/language": {
+        // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#language
+        "format": "Lang: {}",
+        "format-en": "AMERICA, HELL YEAH!",
+        "format-tr": "As bayrakları",
+        "keyboard-name": "at-translated-set-2-keyboard"
+    },
+    "hyprland/submap": {
+        "format": "✌️ {}",
+        "max-length": 8,
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 4
+    },
+    "clock": {
+        "interval": 1,
+        "format": " {:%H:%M}",
+        "format-alt": " {:%Y-%m-%d %H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "temperature": {
+        "interval": 1,
+        "tooltip": true,
+        "hwmon-path": [
+            "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input",
+            "/sys/class/hwmon/hwmon1/temp1_input",
+            "/sys/class/thermal/thermal_zone0/temp"
+        ],
+        "critical-threshold": 75,
+        "format-critical": "{icon} {temperatureC} 󰔄",
+        "format": "{icon} {temperatureC} 󰔄",
+        "format-icons": [
+            ""
+        ],
+        "on-click": "psensor",
+    },
+    "cpu": {
+        "interval": 1,
+        "format": " {usage:>2}%",
+        "tooltip": true,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% ",
+        "format-icons": [
+            "▁",
+            "▂",
+            "▃",
+            "▄",
+            "▅",
+            "▆",
+            "▇",
+            "█"
+        ],
+        "on-click-right": "gnome-system-monitor"
+    },
+    "memory": {
+        "interval": 10,
+        "format": "\uf538 {used:0.1f}G",
+        "tooltip": true,
+        "tooltip-format": " RAM: {used:0.2f}G / {total:0.2f}G\nSwap: {swapUsed:0.2f}G / {swapTotal:0.2f}G",
+        "on-click": "kitty --title btop sh -c 'nvtop'"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰌘",
+        "format-disconnected": "󰌙",
+        "tooltip-format": "{ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "max-length": 50,
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "network#speed": {
+        "interval": 1,
+        "format": "{ifname}",
+        "format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-ethernet": "󰌘   {bandwidthUpBytes}  {bandwidthDownBytes}",
+        "format-disconnected": "󰌙",
+        "tooltip-format": "{ipaddr}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "max-length": 50,
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ]
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume:2}%",
+        "format-bluetooth": "{icon} 󰂰 {volume}%",
+        "format-muted": "󰖁",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                "󰕾",
+                ""
+            ],
+            "ignored-sinks": [
+                "Easy Effects Sink"
+            ]
+        },
+        "scroll-step": 5.0,
+        "on-click": "pavucontrol -t 3",
+        "on-click-right": "~/.config/hypr/scripts/volume_control.sh --toggle",
+        "on-scroll-up": "~/.config/hypr/scripts/volume_control.sh --inc",
+        "on-scroll-down": "~/.config/hypr/scripts/volume_control.sh --dec",
+        "tooltip-format": "{icon} {desc} | {volume}%",
+        "smooth-scrolling-threshold": 1
+    },
+    "mpris": {
+        "interval": 10,
+        "format": "{player_icon}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "on-click-middle": "playerctl play-pause",
+        "on-click": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "on-scroll-up": "~/.config/hypr/scripts/volume_control.sh --inc",
+        "on-scroll-down": "~/.config/hypr/scripts/volume_control.sh --dec",
+        "smooth-scrolling-threshold": 1,
+        "player-icons": {
+            "chromium": "",
+            "default": "",
+            "firefox": "",
+            "kdeconnect": "",
+            "mopidy": "",
+            "mpv": "󰐹",
+            "spotify": "",
+            "vlc": "󰕼"
+        },
+        "status-icons": {
+            "paused": "󰐎",
+            "playing": "",
+            "stopped": ""
+        },
+        "max-length": 30
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "icon-theme": "Numix-Circle",
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+            "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+    "battery": {
+        //"interval": 5,
+        "align": 0,
+        "rotate": 0,
+        //"bat": "BAT1",
+        //"adapter": "ACAD",
+        "full-at": 100,
+        "design-capacity": false,
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "{capacity}%",
+        "format-plugged": "󱘖 {capacity}%",
+        "format-alt-click": "click",
+        "format-full": "{icon} Full",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "format-time": "{H}h {M}min",
+        "tooltip": true,
+        "tooltip-format": "{timeTo} {power}w",
+        "on-click-right": "~/.config/hypr/scripts/wlogout.sh",
+    },
+}

@@ -1,0 +1,42 @@
+{
+    "group/motherboard": {
+        "orientation": "horizontal",
+        "modules": [
+            "temperature",
+            "cpu",
+            "memory",
+            "battery"
+        ],
+        "drawer": {
+            "orientation": "vertical",
+            "transition-duration": 500
+        }
+    },
+    "group/controlcenter": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/swaync",
+            "custom/updater",
+            "custom/wallpaper",
+            "custom/power",
+        ],
+        "drawer": {
+            "transition-left-to-right": true,
+            "child-class": "group-controlcenter",
+        },
+    },
+    "group/laptop": {
+        "orientation": "horizontal",
+        "modules": [
+            "backlight",
+            "battery",
+        ]
+    },
+    "group/audio": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "pulseaudio#microphone",
+        ]
+    },
+}

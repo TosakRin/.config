@@ -1,0 +1,21 @@
+# autoload -Uz +X compinit
+# functions[compinit]=$'print -u2 \'compinit being called at \'${funcfiletrace[1]}
+# '${functions[compinit]}
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+
+append_path '~/.local/bin'
+#: Go
+append_path $GOBIN
+#: Java
+append_path "$JAVA_HOME/bin"
+#: Tomcat
+append_path "$CATALINA_HOME/bin"
+#: JetBrains
+append_path "/home/tosakrin/.local/share/JetBrains/Toolbox/scripts"

@@ -1,0 +1,214 @@
+* {
+	/* `otf-font-awesome` is required to be installed for icons */
+	font-family: "sans-serif";
+	font-weight: 600;
+	font-size: 16px;
+
+
+	border-radius: 8px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+	transition-property: background;
+	transition-duration: 0.2s;
+
+}
+
+#window {
+	font-family: sans-serif;
+	font-weight: 600;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+window#waybar {
+	background-color: transparent;
+}
+
+window#waybar.hidden {
+	opacity: 0.2;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+}
+
+/* window#waybar.firefox {
+	background-color: #fa9108;
+	color: #fa9108;
+}
+
+window#waybar.chromium {
+	background-color: #eeeeee;
+	color: #000000;
+}
+
+window#waybar.code-url-handler {
+	background-color: #008cff;
+	color: #008cff;
+}  */
+
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#window,
+#workspaces,
+#custom-swaync,
+#custom-power,
+#temperature,
+#mpris,
+#taskbar,
+#battery,
+#custom-launcher,
+#custom-updater,
+#custom-wallpaper,
+#custom-submap,
+#custom-menu {
+	margin: 5px 2px;
+	padding: 1px 10px;
+	box-shadow: 3px 5px 2px -2px rgba(0, 0, 0, 0.25);
+	/* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px; */
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 2px, rgba(0, 0, 0, 0.22) 0px 2px 2px;
+}
+
+
+
+#workspaces {
+	padding: 3px;
+	background: rgba(31, 31, 31, 1);
+	transition: none;
+	font-size: 16px;
+}
+
+#workspaces :first-child {
+	margin-left: 0;
+}
+
+#workspaces button {
+	border: none;
+	border-radius: 5px;
+	padding: 0 6px;
+	background: transparent;
+	color: #ffffff;
+	margin-left: 3px;
+}
+
+#workspaces button:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
+
+#workspaces button.empty {
+	color: rgba(255, 255, 255, 0.25);
+}
+
+#workspaces button.active {
+	background: #f0f7ff;
+	color: #f44747;
+}
+
+#workspaces button.urgent {
+	background-color: #eb4d4b;
+}
+
+#taskbar {
+	background-color: #282c34;
+}
+
+#taskbar button {
+	padding: 0 1px;
+	margin: 0 1px;
+	border-radius: 0;
+}
+
+#taskbar button:hover {
+	background-color: #ffffff;
+}
+
+#mode {
+	background-color: #64727d;
+	border-bottom: 3px solid #ffffff;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > * {
+	margin-left: 12px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > * {
+	margin-right: 12px;
+}
+
+#clock {
+	background-color: #eefff1;
+}
+
+#cpu {
+	background-color: #FFC09B;
+}
+
+#memory {
+	background-color: #ffeaaa;
+}
+
+#pulseaudio {
+	background-color: #b0f5e5;
+}
+
+#network {
+	background-color: #a4e4fe;
+}
+
+#tray {
+	background-color: #c6d0cf;
+}
+
+#custom-swaync {
+	background-color: #ABAAF9;
+}
+
+#custom-power {
+	background-color: #BFA4FA;
+	margin: 5px 0px 5px 10px;
+	margin-left: 4px;
+	margin-right: 0px;
+	padding-right: 6px;
+}
+
+#temperature {
+	background-color: #fe968b;
+}
+
+#mpris {
+	background-color: #282c34;
+	color: #ffffff;
+}
+
+#battery {
+	background-color: #97b0f7;
+}
+
+/* archlinux palette */
+#custom-launcher {
+	background-color: #1793d1;
+	color: #333333;
+	padding: 0 4px 0 8px;
+	margin-left: 5px;
+	text-shadow: 0 0;
+}
+
+#custom-menu {
+	background-color: #F0EDE3;
+}
+
+#custom-updater {
+	background-color: #52a5ce;
+}
+
+#custom-wallpaper {
+	background-color: #f0ede3;
+	padding-right: 6px;
+}

@@ -1,0 +1,120 @@
+{
+    // https://github.com/Alexays/Waybar/blob/9cfb1e38fa26b5c4639fe510c06af0916a078d93/man/waybar-custom.5.scd
+    // The path to a script, which determines if the script in *exec* should be executed. ++ *exec* will be executed if the exit code of *exec-if* equals 0.
+    "custom/cycle_wall": {
+        "format": " ",
+        "exec": "echo ; echo 󰸉 wallpaper select",
+        "on-click": "~/.config/hypr/scripts/wallpaperSelect.sh",
+        "interval": 86400, // once every day
+        "tooltip": true,
+    },
+    "custom/menu": {
+        "format": "{}",
+        "exec": "echo ; echo 󱓟 app launcher",
+        "interval": 86400, // once every day
+        "tooltip": true,
+        "on-click": "pkill rofi || rofi -show drun -modi run,drun,filebrowser,window",
+        "on-click-middle": "~/.config/hypr/scripts/wallpaperSelect.sh",
+        "on-click-right": "~/.config/hypr/scripts/WaybarLayout.sh",
+    },
+    // This is a custom cava visualizer
+    "custom/cava_mviz": {
+        "exec": "~/.config/hypr/scripts/WaybarCava.sh",
+        "format": "{}"
+    },
+    "custom/playerctl": {
+        "format": "<span>{}</span>",
+        "return-type": "json",
+        "max-length": 35,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} ~ {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        "on-click-middle": "playerctl play-pause",
+        "on-click": "playerctl previous",
+        "on-click-right": "playerctl next",
+        "scroll-step": 5.0,
+        "on-scroll-up": "~/.config/hypr/scripts/volume_control.sh --inc",
+        "on-scroll-down": "~/.config/hypr/scripts/volume_control.sh --dec",
+        "smooth-scrolling-threshold": 1,
+    },
+    "custom/power": {
+        "format": "⏻ ",
+        "exec": "echo ; echo 󰟡 power // blur",
+        "on-click": "~/.config/hypr/scripts/wlogout.sh",
+        "interval": 86400, // once every day
+        "tooltip": true,
+    },
+    "custom/swaync": {
+        // https://github.com/Alexays/Waybar/issues/3605
+        "tooltip": true,
+        "format": "{icon} {0}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "sleep 0.1 && swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+    // NOTE:! This is only for Arch and Arch Based Distros
+    "custom/updater": {
+        "format": " {}",
+        "exec-if": "[[ $(checkupdates | wc -l) ]]",
+        "exec": "checkupdates | wc -l",
+        "interval": 15,
+        "on-click": "kitty -T update paru -Syu || yay -Syu && notify-send 'The system has been updated'",
+    },
+    "custom/wallpaper": {
+        "format": " ",
+        "on-click": "bash ~/.config/system_scripts/pkill_bc"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click",
+        "interval": 3600,
+        "return-type": "json",
+        "exec": "~/.config/hypr/scripts/Weather.sh",
+        "exec": "~/.config/hypr/scripts/Weather.py",
+        "exec-if": "ping wttr.in -c1",
+        "tooltip": true,
+    },
+    // Separators
+    "custom/separator#dot": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#dot-line": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#line": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank": {
+        "format": "",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank_2": {
+        "format": "  ",
+        "interval": "once",
+        "tooltip": false
+    },
+    "custom/separator#blank_3": {
+        "format": "   ",
+        "interval": "once",
+        "tooltip": false
+    },
+}
