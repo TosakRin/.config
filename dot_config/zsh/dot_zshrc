@@ -94,5 +94,3 @@ source "$XDG_CONFIG_HOME"/zsh/.zshrc-alias
 
 
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
-
-source /home/tosakrin/.config/broot/launcher/bash/br
