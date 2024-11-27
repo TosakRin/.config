@@ -17,3 +17,7 @@ alias ps=procs
 alias top=btop
 alias find=fd
 alias ping=gping
+
+#: Other
+# zoxide
+# 
